@@ -5,4 +5,6 @@ import com.xxxx.ddd.domain.model.entity.TicketDetail;
 public interface TicketDetailDomainService {
 
     TicketDetail getTicketDetailById(Long ticketId);
+
+    String getTicketDetailByIdFake(Long id);
 }

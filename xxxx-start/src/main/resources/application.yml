@@ -2,7 +2,9 @@ server:
   port: 1122
   tomcat:
     threads:
-      max: 10 #
+      max: 200 #
+      min-spare: 50
+    accept-count: 20000
 spring:
   # application
   application:

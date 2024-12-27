@@ -103,7 +103,7 @@ public class TicketDetailCacheService {
             // 3 -> van khong co thi truy van DB
 
             ticketDetail = ticketDetailDomainService.getTicketDetailById(id);
-//            log.info("FROM DBS ->>>> {}, {}", ticketDetail, version);
+            log.info("FROM DBS ->>>> {}, {}", ticketDetail, version);
             if (ticketDetail == null) { // Neu trong dbs van khong co thi return ve not exists;
 //                log.info("TICKET NOT EXITS....{}", version);
                 // set
@@ -141,7 +141,7 @@ public class TicketDetailCacheService {
         // 1. Get Item local cache
         TicketDetail ticketDetail = getTicketDetailLocalCache(id);
         if (ticketDetail != null) {
-            log.info("FROM LOCAL CACHE EXIST {}", ticketDetail);
+//            log.info("FROM LOCAL CACHE EXIST {}", ticketDetail);
             return ticketDetail;
         }
 
@@ -175,11 +175,10 @@ public class TicketDetailCacheService {
                 return ticketDetail;
             }
             // 3 -> van khong co thi truy van DB
-
             ticketDetail = ticketDetailDomainService.getTicketDetailById(id);
-//            log.info("FROM DBS ->>>> {}, {}", ticketDetail, version);
+            log.info("FROM DBS ->>>> {}, {}", ticketDetail, version);
             if (ticketDetail == null) { // Neu trong dbs van khong co thi return ve not exists;
-//                log.info("TICKET NOT EXITS....{}", version);
+                log.info("TICKET NOT EXITS....{}", version);
                 // set
                 redisInfrasService.setObject(genEventItemKey(id), ticketDetail);
                 ticketDetailLocalCache.put(id, null);

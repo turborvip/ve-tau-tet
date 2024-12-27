@@ -2,8 +2,11 @@ package com.xxxx.ddd.infrastructure.cache.redis;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.common.cache.Cache;
+import com.xxxx.ddd.domain.model.entity.TicketDetail;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
@@ -14,7 +17,6 @@ import java.util.Optional;
 @Component
 @Slf4j
 public class RedisInfrasServiceImpl implements RedisInfrasService {
-
 
     @Resource
     private RedisTemplate<String, Object> redisTemplate;

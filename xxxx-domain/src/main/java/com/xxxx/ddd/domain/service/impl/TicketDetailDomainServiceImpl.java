@@ -12,13 +12,15 @@ import org.springframework.stereotype.Service;
 public class TicketDetailDomainServiceImpl implements TicketDetailDomainService {
     // Call repository in domain
     private static int count = 0;
+    private static int countQueryDB = 0;
+
 
     @Autowired
     private TicketDetailRepository ticketDetailRepository;
 
     @Override
     public TicketDetail getTicketDetailById(Long ticketId) {
-        log.info("Implement Domain : {}", ticketId);
+        log.info("count query DB :{}",countQueryDB++);
         return ticketDetailRepository.findById(ticketId).orElse(null);
     }
 

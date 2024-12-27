@@ -18,7 +18,6 @@ public class TicketDetailAppServiceImpl implements TicketDetailAppService {
 
     @Override
     public TicketDetail getTicketDetailById(Long ticketId) {
-        log.info("Implement Application : {}", ticketId);
         return ticketDetailCacheService.getTicketDefaultCacheLocal(ticketId, System.currentTimeMillis());
     }
 

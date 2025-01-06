@@ -43,3 +43,4 @@ benchmark/
 ### enviroment ###
 environment/data/db_data/
 environment/data/prometheus_data/
+environment/grafana-storage/
